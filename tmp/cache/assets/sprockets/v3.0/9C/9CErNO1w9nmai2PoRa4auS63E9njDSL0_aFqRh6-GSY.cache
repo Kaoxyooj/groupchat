@@ -1,0 +1,8 @@
+I"®(function() {
+  $(document).on("turbolinks:load", function() {
+    $("#new_message").on("keypress", function(e) {});
+    return console.log(e.keycode);
+  });
+
+}).call(this);
+:ET
