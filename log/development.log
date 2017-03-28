@@ -7135,3 +7135,32 @@ Processing by ChatroomsController#show as HTML
 Completed 200 OK in 910ms (Views: 746.0ms | ActiveRecord: 44.3ms)
 
 
+Started GET "/" for ::1 at 2017-03-28 10:46:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChatroomsController#index as HTML
+  Rendering chatrooms/index.html.erb within layouts/application
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  Rendered chatrooms/index.html.erb within layouts/application (12.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 2]]
+Completed 200 OK in 428ms (Views: 397.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/cable" for ::1 at 2017-03-28 10:46:29 -0500
+Started GET "/cable/" [WebSocket] for ::1 at 2017-03-28 10:46:29 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActionCable] [User 2] Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzI)
+[ActionCable] [User 2]   [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 2]]
+[ActionCable] [User 2] ChatroomsChannel is transmitting the subscription confirmation
+[ActionCable] [User 2] ChatroomsChannel is streaming from chatrooms:1
+Started GET "/cable" for ::1 at 2017-03-28 10:46:32 -0500
+Started GET "/cable/" [WebSocket] for ::1 at 2017-03-28 10:46:32 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActionCable] [User 2] Registered connection (Z2lkOi8vY2hhdC9Vc2VyLzI)
+[ActionCable] [User 2]   [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "chatroom_users" ON "chatrooms"."id" = "chatroom_users"."chatroom_id" WHERE "chatroom_users"."user_id" = ?[0m  [["user_id", 2]]
+[ActionCable] [User 2] ChatroomsChannel is transmitting the subscription confirmation
+[ActionCable] [User 2] ChatroomsChannel is streaming from chatrooms:1
+[ActionCable] [User 2] Finished "/cable/" [WebSocket] for ::1 at 2017-03-28 10:46:39 -0500
+[ActionCable] [User 2] ChatroomsChannel stopped streaming from chatrooms:1
